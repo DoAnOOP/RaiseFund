@@ -1,0 +1,299 @@
+<html lang="en" style=""
+    class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths hydrated">
+
+<head>
+	<title>Charitus</title>
+
+    <meta charset="utf-8">
+    <style data-styles="">
+        ion-icon {
+            visibility: hidden
+        }
+
+        .hydrated {
+            visibility: inherit
+        }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+    <link href="plugins/bootstrap-5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- script
+	================================================== -->
+    <script src="js/modernizr.js"></script>
+
+    <style>
+        :is([id*='google_ads_iframe'], [id*='taboola-'], .taboolaHeight, .taboola-placeholder, #credential_picker_container, #credentials-picker-container, #credential_picker_iframe, [id*='google-one-tap-iframe'], #google-one-tap-popup-container, .google-one-tap-modal-div, #amp_floatingAdDiv, #ez-content-blocker-container) {
+            display: none !important;
+            min-height: 0 !important;
+            height: 0 !important;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0" data-aos-easing="ease" data-aos-duration="600"
+    data-aos-delay="0" class="loaded">
+
+    <div id="overlayer" style="display: none;">
+        <span class="loader">
+            <div class="dot dot-1"></div>
+            <div class="dot dot-2"></div>
+            <div class="dot dot-3"></div>
+        </span>
+    </div>
+
+    <header class="site-header position-fixed py-1 text-white bg-dark">
+        <nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
+
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo"></a>
+
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2"
+                    aria-label="Toggle navigation"><ion-icon name="menu-outline" role="img"
+                        class="md hydrated"></ion-icon></button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2"
+                    aria-labelledby="offcanvasNavbar2Label">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link me-4" href="./about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-4" href="./blog.html">Discover Campaigns</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link me-4" href="./create.html">Start a Campaign</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="sign-in-btn nav-link me-4">Sign In</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </nav>
+    </header>
+
+    <section id="intro" class="padding-large jarallax">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="section-title my-5">
+                        <div class="breadcrumb text-white">
+                            <span class="item"><a href="index.html" class="text-white">Home</a></span> &nbsp; / &nbsp;
+                            <span class="item">Fundraiser</span>
+                        </div>
+                        <h2 class="text-white display-2">Browse Fundraiser</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="jarallax-container-0"
+            style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; z-index: -100; clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);">
+            <img src="images/banner.jpg" class="jarallax-img"
+                style="object-fit: cover; object-position: 50% 50%; max-width: none; position: fixed; top: 0px; left: 0px; width: 1310.4px; height: 665.5px; overflow: hidden; pointer-events: none; transform-style: preserve-3d; backface-visibility: hidden; will-change: transform, opacity; margin-top: 72.75px; transform: translate3d(0px, -72.75px, 0px);">
+        </div>
+    </section>
+
+
+    <section class="browse-section" role="region" aria-label="GoFundMe categories" tabindex="0"
+        data-testid="gfm-categories-wrapper">
+
+        <h2 class="heading-2 text-center mb3x" data-testid="gfm-categories-header">Browse fundraisers by
+            category</h2>
+
+        <div class="section-categories grid-x small-up-2 medium-up-3 large-up-6">
+            <a href="/discover/medical-fundraiser" role="button" class="section-categories-icon cell text-center"
+                data-testid="gfm-categories-icon"
+                data-gfm-analytics-element="btn_category_grid_discovermedical-fundraiser">
+                <div class="cat-ico cat-ico--medical" aria-hidden="true"></div>
+                <div class="text-black">Medical</div>
+            </a>
+            <a href="/discover/memorial-fundraiser" role="button" class="section-categories-icon cell text-center"
+                data-testid="gfm-categories-icon"
+                data-gfm-analytics-element="btn_category_grid_discovermemorial-fundraiser">
+                <div class="cat-ico cat-ico--memorial" aria-hidden="true"></div>
+                <div class="text-black">Memorial</div>
+            </a>
+            <a href="/discover/emergency-fundraiser" role="button" class="section-categories-icon cell text-center"
+                data-testid="gfm-categories-icon"
+                data-gfm-analytics-element="btn_category_grid_discoveremergency-fundraiser">
+                <div class="cat-ico cat-ico--emergency" aria-hidden="true"></div>
+                <div class="text-black">Emergency</div>
+            </a>
+            <a href="/discover/charity-fundraiser" role="button" class="section-categories-icon cell text-center"
+                data-testid="gfm-categories-icon"
+                data-gfm-analytics-element="btn_category_grid_discovercharity-fundraiser">
+                <div class="cat-ico cat-ico--charity" aria-hidden="true"></div>
+                <div class="text-black">Nonprofit</div>
+            </a>
+            <a href="/discover/education-fundraiser" role="button" class="section-categories-icon cell text-center"
+                data-testid="gfm-categories-icon"
+                data-gfm-analytics-element="btn_category_grid_discovereducation-fundraiser">
+                <div class="cat-ico cat-ico--education" aria-hidden="true"></div>
+                <div class="text-black">Education</div>
+            </a>
+            <a href="/discover/animal-fundraiser" role="button" class="section-categories-icon cell text-center"
+                data-testid="gfm-categories-icon"
+                data-gfm-analytics-element="btn_category_grid_discoveranimal-fundraiser">
+                <div class="cat-ico cat-ico--animal" aria-hidden="true"></div>
+                <div class="text-black">Animals</div>
+            </a>
+        </div>
+
+    </section>
+
+    <section id="latest-blog" class="scrollspy-section padding-large">
+
+        <h2 class="heading-2 text-center mb3x blog-header" data-testid="gfm-categories-header">Browse fundraisers by
+            category</h2>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <!-- post grid -->
+                    <div class="post-grid">
+                        <div class="row" data-masonry="{&quot;percentPosition&quot;: true }">
+
+                            <div class="col-md-4">
+
+                                <article class="post-item">
+
+                                    <figure>
+                                        <div href="#" class="image-hvr-effect">
+                                            <img src="./images/Capture.PNG"
+                                                alt="post" class="post-image">
+                                        </div>
+                                    </figure>
+
+                                    <div class="post-content">
+                                        <div class="post-meta">Costa Mesa, CA</div>
+                                        <h2 class="post-title"><a href="single-post.html">Help Lulu get new teeth and
+                                                stability ❤️</a></h2>
+                                        <p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis
+                                            nulla blandit dui.</p>
+                                    </div>
+                                    <div class="fund-item progress-bar-contain">
+                                        <div class="progress-bar progress-bar-behind">
+                                            <div class="progress-bar progress-bar-fill" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="fund-item truncate-single-line">
+                                        <div class="show-for-medium">
+                                            <strong>$50,717 raised</strong> of $20,000
+                                        </div>
+                                    </div>
+                                </article>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- / post grid -->
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer class="padding-large text-white bg-dark">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-md-6">
+                    <img src="images/logo.png">
+                    <p class="business-info">
+                        55 Giai Phong, Dist. Hai Ba Trung, Hanoi, Viet Nam<br>
+                        011-554-8798-6556
+                    </p>
+                    <ul class="justify-content-start list-unstyled d-flex">
+                        <li><a href="#" class="nav-link"><ion-icon name="logo-facebook" role="img"
+                                    class="md hydrated"></ion-icon></a></li>
+                        <li><a href="#" class="nav-link"><ion-icon name="logo-instagram" role="img"
+                                    class="md hydrated"></ion-icon></a></li>
+                        <li><a href="#" class="nav-link"><ion-icon name="logo-skype" role="img"
+                                    class="md hydrated"></ion-icon></a></li>
+                        <li><a href="#" class="nav-link"><ion-icon name="logo-pinterest" role="img"
+                                    class="md hydrated"></ion-icon></a></li>
+                        <li><a href="#" class="nav-link"><ion-icon name="logo-whatsapp" role="img"
+                                    class="md hydrated"></ion-icon></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-4 col-md-2">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Facebook</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Twitter</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Instagram</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pinterest</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">YouTube</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-4 col-md-2">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-4 col-md-2">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="plugins/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,348 @@
+<html lang="en" style=""
+    class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths hydrated">
+
+<head>
+	<title>Charitus</title>
+
+    <meta charset="utf-8">
+    <style data-styles="">
+        ion-icon {
+            visibility: hidden
+        }
+
+        .hydrated {
+            visibility: inherit
+        }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="./css/fund.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+    <link href="plugins/bootstrap-5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- script
+	================================================== -->
+    <script src="js/modernizr.js"></script>
+
+    <style>
+        :is([id*='google_ads_iframe'], [id*='taboola-'], .taboolaHeight, .taboola-placeholder, #credential_picker_container, #credentials-picker-container, #credential_picker_iframe, [id*='google-one-tap-iframe'], #google-one-tap-popup-container, .google-one-tap-modal-div, #amp_floatingAdDiv, #ez-content-blocker-container) {
+            display: none !important;
+            min-height: 0 !important;
+            height: 0 !important;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0" data-aos-easing="ease" data-aos-duration="600"
+    data-aos-delay="0" class="loaded">
+
+    <div id="overlayer" style="display: none;">
+        <span class="loader">
+            <div class="dot dot-1"></div>
+            <div class="dot dot-2"></div>
+            <div class="dot dot-3"></div>
+        </span>
+    </div>
+
+    <header class="site-header position-fixed py-1 text-white bg-dark">
+        <nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
+
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo"></a>
+
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2"
+                    aria-label="Toggle navigation"><ion-icon name="menu-outline" role="img"
+                        class="md hydrated"></ion-icon></button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2"
+                    aria-labelledby="offcanvasNavbar2Label">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link me-4" href="./about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-4" href="./blog.html">Discover Campaigns</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-4" href="./create.html">Start a Campaign</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="sign-in-btn nav-link me-4">Sign In</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </nav>
+    </header>
+
+    <section id="intro" class="padding-large jarallax">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="section-title my-5">
+                        <div class="breadcrumb text-white">
+                            <span class="item"><a href="index.html" class="text-white">Home</a></span> &nbsp; / &nbsp;
+                            <span class="item">Fundraiser</span>
+                        </div>
+                        <h2 class="text-white display-2">Browse Fundraiser</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="jarallax-container-0"
+            style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; z-index: -100; clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);">
+            <img src="images/banner.jpg" class="jarallax-img"
+                style="object-fit: cover; object-position: 50% 50%; max-width: none; position: fixed; top: 0px; left: 0px; width: 1310.4px; height: 665.5px; overflow: hidden; pointer-events: none; transform-style: preserve-3d; backface-visibility: hidden; will-change: transform, opacity; margin-top: 72.75px; transform: translate3d(0px, -72.75px, 0px);">
+        </div>
+    </section>
+
+
+    <section class="col-sm-9 container create-campaign">
+        <div class="p-category-page-form">
+            <fieldset class="p-category-page-country-zip typography-experiment hrt-fieldset">
+                <h1 class="hrt-text-legend hrt-fieldset-legend">Where will the funds go?</h1>
+                <p class="hrt-text-body-sm hrt-text-gray">Choose a bank where you plan to withdraw your funds.</p>
+                <div class="bank-form-container">
+                    <div class="bank-dropdown">
+                        <div class="caption">Select</div>
+                        <div class="list">
+                            <div class="item">Option 1</div>
+                            <div class="item">Option 2</div>
+                            <div class="item">Option 3</div>
+                            <div class="item">Option 4</div>
+                            <div class="item">Option 5</div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="p-category-page-categories-container">
+                <p class="p-category-page-category-label">What best describes why you're fundraising?</p>
+                <div class="m-select-pills-container"><label class="m-select-pills-pill m-select-pills-pill--checked"
+                        for="categoryId-3"><input name="categoryId" type="radio" class="m-select-pills-input--hidden"
+                            id="categoryId-3" data-element-id="input_category" value="3"
+                            data-analytic-event-listener="true">Animals<div class="m-select-pills-pill-outline"></div>
+                    </label><label class="m-select-pills-pill" for="categoryId-5"><input name="categoryId" type="radio"
+                            class="m-select-pills-input--hidden" id="categoryId-5" data-element-id="input_category"
+                            value="5" data-analytic-event-listener="true">Business<div
+                            class="m-select-pills-pill-outline"></div></label><label class="m-select-pills-pill"
+                        for="categoryId-7"><input name="categoryId" type="radio" class="m-select-pills-input--hidden"
+                            id="categoryId-7" data-element-id="input_category" value="7"
+                            data-analytic-event-listener="true">Community<div class="m-select-pills-pill-outline"></div>
+                    </label><label class="m-select-pills-pill" for="categoryId-8"><input name="categoryId" type="radio"
+                            class="m-select-pills-input--hidden" id="categoryId-8" data-element-id="input_category"
+                            value="8" data-analytic-event-listener="true">Creative<div
+                            class="m-select-pills-pill-outline"></div></label><label class="m-select-pills-pill"
+                        for="categoryId-17"><input name="categoryId" type="radio" class="m-select-pills-input--hidden"
+                            id="categoryId-17" data-element-id="input_category" value="17"
+                            data-analytic-event-listener="true">Education<div class="m-select-pills-pill-outline"></div>
+                    </label><label class="m-select-pills-pill" for="categoryId-2"><input name="categoryId" type="radio"
+                            class="m-select-pills-input--hidden" id="categoryId-2" data-element-id="input_category"
+                            value="2" data-analytic-event-listener="true">Emergencies
+                        <div class="m-select-pills-pill-outline"></div>
+                    </label><label class="m-select-pills-pill" for="categoryId-342"><input name="categoryId"
+                            type="radio" class="m-select-pills-input--hidden" id="categoryId-342"
+                            data-element-id="input_category" value="342" data-analytic-event-listener="true">Environment
+                        <div class="m-select-pills-pill-outline">
+                        </div>
+                    </label><label class="m-select-pills-pill" for="categoryId-6"><input name="categoryId" type="radio"
+                            class="m-select-pills-input--hidden" id="categoryId-6" data-element-id="input_category"
+                            value="6" data-analytic-event-listener="true">Events<div
+                            class="m-select-pills-pill-outline"></div></label><label class="m-select-pills-pill"
+                        for="categoryId-12"><input name="categoryId" type="radio" class="m-select-pills-input--hidden"
+                            id="categoryId-12" data-element-id="input_category" value="12"
+                            data-analytic-event-listener="true">Faith<div class="m-select-pills-pill-outline"></div>
+                    </label><label class="m-select-pills-pill" for="categoryId-4"><input name="categoryId" type="radio"
+                            class="m-select-pills-input--hidden" id="categoryId-4" data-element-id="input_category"
+                            value="4" data-analytic-event-listener="true">Family<div
+                            class="m-select-pills-pill-outline"></div></label><label class="m-select-pills-pill"
+                        for="categoryId-9"><input name="categoryId" type="radio" class="m-select-pills-input--hidden"
+                            id="categoryId-9" data-element-id="btn_funeral_mme" value="9"
+                            data-analytic-event-listener="true">Funeral &amp; Memorial<div
+                            class="m-select-pills-pill-outline"></div></label><label class="m-select-pills-pill"
+                        for="categoryId-11"><input name="categoryId" type="radio" class="m-select-pills-input--hidden"
+                            id="categoryId-11" data-element-id="input_category" value="11"
+                            data-analytic-event-listener="true">Medical<div class="m-select-pills-pill-outline"></div>
+                    </label><label class="m-select-pills-pill" for="categoryId-344"><input name="categoryId"
+                            type="radio" class="m-select-pills-input--hidden" id="categoryId-344"
+                            data-element-id="input_category" value="344" data-analytic-event-listener="true">Monthly
+                        Bills<div class="m-select-pills-pill-outline"></div></label><label class="m-select-pills-pill"
+                        for="categoryId-14"><input name="categoryId" type="radio" class="m-select-pills-input--hidden"
+                            id="categoryId-14" data-element-id="input_category" value="14"
+                            data-analytic-event-listener="true">Newlyweds<div class="m-select-pills-pill-outline"></div>
+                    </label><label class="m-select-pills-pill" for="categoryId-15"><input name="categoryId" type="radio"
+                            class="m-select-pills-input--hidden" id="categoryId-15" data-element-id="input_category"
+                            value="15" data-analytic-event-listener="true">Other<div
+                            class="m-select-pills-pill-outline"></div></label><label class="m-select-pills-pill"
+                        for="categoryId-16"><input name="categoryId" type="radio" class="m-select-pills-input--hidden"
+                            id="categoryId-16" data-element-id="input_category" value="16"
+                            data-analytic-event-listener="true">Sports<div class="m-select-pills-pill-outline"></div>
+                    </label><label class="m-select-pills-pill" for="categoryId-10"><input name="categoryId" type="radio"
+                            class="m-select-pills-input--hidden" id="categoryId-10" data-element-id="input_category"
+                            value="10" data-analytic-event-listener="true">Travel<div
+                            class="m-select-pills-pill-outline"></div></label><label class="m-select-pills-pill"
+                        for="categoryId-18"><input name="categoryId" type="radio" class="m-select-pills-input--hidden"
+                            id="categoryId-18" data-element-id="input_category" value="18"
+                            data-analytic-event-listener="true">Volunteer<div class="m-select-pills-pill-outline"></div>
+                    </label><label class="m-select-pills-pill" for="categoryId-20"><input name="categoryId" type="radio"
+                            class="m-select-pills-input--hidden" id="categoryId-20" data-element-id="input_category"
+                            value="20" data-analytic-event-listener="true">Wishes<div
+                            class="m-select-pills-pill-outline"></div></label></div>
+            </div>
+            <div class="form-group money-form">
+                <p for="input-money" class="control-label">Your starting goal ($):</p>
+                <input type="text" class="form-control mask-money" id="input-money" placeholder="0,00">
+            </div>
+            <h2>Add a cover photo</h2>
+            <p class="lead">Using a bright and clear photo helps people connect to your fundraiser right away.</p>
+
+            <!-- Upload  -->
+            <div id="file-upload-form" class="uploader">
+                <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+
+                <label for="file-upload" id="file-drag">
+                    <img id="file-image" src="#" alt="Preview" class="hidden">
+                    <div id="start">
+                        <i class="fa fa-download" aria-hidden="true"></i>
+                        <div>Select a file or drag here</div>
+                        <div id="notimage" class="hidden">Please select an image</div>
+                        <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+                    </div>
+                    <div id="response" class="hidden">
+                        <div id="messages"></div>
+                        <progress class="progress" id="file-progress" value="0">
+                            <span>0</span>%
+                        </progress>
+                    </div>
+                </label>
+            </div>
+
+            <div class="title-input">
+                <label for="nme"><span>Give your fundraiser a title</span></label>
+                <input type="text" name="name" class="question" id="nme" required autocomplete="off" />
+                <label for="msg"><span>What's your story?</span></label>
+                <textarea name="message" rows="2" class="question" id="msg" required autocomplete="off"></textarea>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="padding-large text-white bg-dark">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-md-6">
+                    <img src="images/logo.png">
+                    <p class="business-info">
+                        55 Giai Phong, Dist. Hai Ba Trung, Hanoi, Viet Nam<br>
+                        011-554-8798-6556
+                    </p>
+                    <ul class="justify-content-start list-unstyled d-flex">
+                        <li><a href="#" class="nav-link"><ion-icon name="logo-facebook" role="img"
+                                    class="md hydrated"></ion-icon></a></li>
+                        <li><a href="#" class="nav-link"><ion-icon name="logo-instagram" role="img"
+                                    class="md hydrated"></ion-icon></a></li>
+                        <li><a href="#" class="nav-link"><ion-icon name="logo-skype" role="img"
+                                    class="md hydrated"></ion-icon></a></li>
+                        <li><a href="#" class="nav-link"><ion-icon name="logo-pinterest" role="img"
+                                    class="md hydrated"></ion-icon></a></li>
+                        <li><a href="#" class="nav-link"><ion-icon name="logo-whatsapp" role="img"
+                                    class="md hydrated"></ion-icon></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-4 col-md-2">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Facebook</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Twitter</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Instagram</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pinterest</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">YouTube</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-4 col-md-2">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-4 col-md-2">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="plugins/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $(function () {
+
+            $('.bank-dropdown > .caption').on('click', function () {
+                $(this).parent().toggleClass('open');
+            });
+
+            $('.bank-dropdown > .list > .item').on('click', function () {
+                $('.bank-dropdown > .list > .item').removeClass('selected');
+                $(this).addClass('selected').parent().parent().removeClass('open').children('.caption').text($(this).text());
+            });
+
+            $(document).on('keyup', function (evt) {
+                if ((evt.keyCode || evt.which) === 27) {
+                    $('.bank-dropdown').removeClass('open');
+                }
+            });
+
+            $(document).on('click', function (evt) {
+                if ($(evt.target).closest(".bank-dropdown > .caption").length === 0) {
+                    $('.bank-dropdown').removeClass('open');
+                }
+            });
+
+        });
+    </script>
+
+
+
+</body>
+
+</html>

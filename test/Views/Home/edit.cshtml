@@ -1,0 +1,199 @@
+﻿
+@{
+    ViewBag.Title = "edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<section id="intro" class="padding-large jarallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="section-title my-5">
+                    <div class="breadcrumb text-white">
+                        <span class="item"><a href="/Home/Index" class="text-white">Home</a></span> &nbsp; / &nbsp;
+                        <span class="item">Fundraiser</span>
+                    </div>
+                    <h2 class="text-white display-2">Edit your Campaign</h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="jarallax-container-0"
+         style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; z-index: -100; clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);">
+        <img src="~/Content/images/banner.jpg" class="jarallax-img"
+             style="object-fit: cover; object-position: 50% 50%; max-width: none; position: fixed; top: 0px; left: 0px; width: 1310.4px; height: 665.5px; overflow: hidden; pointer-events: none; transform-style: preserve-3d; backface-visibility: hidden; will-change: transform, opacity; margin-top: 72.75px; transform: translate3d(0px, -72.75px, 0px);">
+    </div>
+</section>
+
+
+<section class="col-sm-9 container create-campaign">
+    <form id="product-form" class="row">
+        <div class="col-6">
+            <div id="file-upload-form" class="uploader">
+                <input id="file-upload" type="file" name="fileUpload" accept="image/*" required />
+                <label for="file-upload" id="file-drag">
+                    <img id="file-image" src="#" alt="Preview" class="hidden">
+                    <div id="start">
+                        <i class="fa fa-download" aria-hidden="true"></i>
+                        <div>Select a file or drag here</div>
+                        <div id="notimage" class="hidden">Please select an image</div>
+                        <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="text-input">
+                <label for="p-image" class="text-label">Image's URL:</label>
+                <input type="text" class="text-field" placeholder="https://photos.google.com/photo/...."
+                       name="p-image" id='p-image' required readonly />
+            </div>
+            <div class="custom-select text-input">
+                <label for="p-bank" class="text-label">
+                    Choose a bank where you plan to withdraw your
+                    funds.:
+                </label>
+                <select name="p-bank" id="p-bank">
+                    <option value="MB">MB Bank</option>
+                    <option value="Memorial">TechcomBank</option>
+                    <option value="Emergency">VNPay</option>
+                    <option value="Nonprofit">Momo</option>
+                </select>
+            </div>
+            <div class="custom-select text-input">
+                <label for="p-category" class="text-label">What best describes why you're fundraising?</label>
+                <select name="p-category" id="p-category">
+                    <option value="Medical">Medical</option>
+                    <option value="Memorial">Memorial</option>
+                    <option value="Emergency">Emergency</option>
+                    <option value="Nonprofit">Nonprofit</option>
+                    <option value="Education">Education</option>
+                    <option value="Animals">Animals</option>
+                </select>
+            </div>
+            <div class="text-input">
+                <label for="p-title" class="text-label">Give your fundraiser a title </label>
+                <input type="text" class="text-field" placeholder="..." name="p-title" id='p-title'
+                       required />
+            </div>
+            <div class="text-input">
+                <label for="p-goal" class="text-label">Your starting goal ($):</label>
+                <input type="text" class="text-field" placeholder="$69" name="p-goal" id='p-goal' required />
+            </div>
+            <div class="text-input">
+                <label for="p-desc" class="text-label">What's your story?</label>
+                <textarea class="text-field" rows="10" placeholder="Lorem ipsum....."
+                          name="p-desc" id='p-desc' required></textarea>
+            </div>
+            <input class="submit-btn" type="submit" value="Edit Campaign">
+        </div>
+
+    </form>
+</section>
+
+<script>
+    document.getElementById("file-upload").addEventListener("change", (e) => {
+        e.preventDefault();
+        handleSubmit();
+    })
+    const handleSubmit = () => {
+        const form = new FormData(document.getElementById("product-form"));
+        const image = form.get("fileUpload");
+        console.log(image);
+        const data = new FormData()
+        data.append("image", image)
+        fetch(
+            "https://api.imgbb.com/1/upload?key=c3a40ca387e441f23f30af59940c7ef2",
+            {
+                method: "POST",
+                body: data
+            }
+        ).then((res) => res.json())
+            .then((res) => {
+                console.log(res.data.url);
+                document.getElementById("p-image").value = res.data.url
+            })
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+        var url = new URL(window.location.href);
+        var productID = url.searchParams.get("p-id");
+
+        //trường hợp không rỗng
+        var formData = new FormData();
+        formData.append("productID", productID);
+
+        $.ajax(
+            {
+                type: "POST",
+                data: formData,
+                contentType: "application/json; charset=utf-8",
+                url: window.location.origin + '/User/get_SP_Info',
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (response) {
+                    var data = JSON.parse(response);
+                    console.log(data)
+                    document.getElementById('start').classList.add("hidden");
+                    document.getElementById('notimage').classList.add("hidden");
+                    // Thumbnail Preview
+                    document.getElementById('file-image').classList.remove("hidden");
+                    document.getElementById('file-image').src = data.Campaign_Img;
+                    document.getElementById('p-image').value = data.Campaign_Img;
+                    document.getElementById('p-bank').value = data.Bank_Name;
+                    document.getElementById('p-category').value = data.Campaign_Cate;
+                    document.getElementById('p-title').value = data.Campaign_Title;
+                    document.getElementById('p-goal').value = data.Campaign_Goal;
+                    document.getElementById('p-desc').value = data.Campaign_Story;
+
+                },
+                error: function (response) {
+                    alert("Xử lý lấy thông tin campaign thất bại");
+                }
+            }
+        );
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".submit-btn").click(function (e) {
+            var url = new URL(window.location.href);
+            const productID = url.searchParams.get("p-id");            
+            const myData = JSON.parse(localStorage.getItem('myData'));
+            const ownerId = myData[0].Account_ID
+            const ownerFullname = myData[0].Full_Name
+            e.preventDefault()
+            var form = $('#product-form')[0];
+            var formData = new FormData(form);
+            formData.append("p-owner", ownerId)
+            formData.append("p-fullname", ownerFullname)
+            formData.append("productID", productID);
+            console.log(formData.get("p-owner"))
+            $.ajax(
+                {
+                    type: "POST",
+                    data: formData,
+                    contentType: "application/json; charset=utf-8",
+                    url: window.location.origin + '/User/Edit_prd',
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    success: function (response) {
+                        alert(response);
+                        window.location.href = "./myprofile";
+                    },
+                    error: function (response) {
+                        alert("Xử lý thêm mới thất bại");
+                    }
+                }
+            )
+        })
+    })
+</script>

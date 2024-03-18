@@ -1,0 +1,194 @@
+﻿@{
+    ViewBag.Title = "myprofile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="intro" class="padding-large jarallax">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="section-title my-5">
+                    <div class="breadcrumb text-white">
+                        <span class="item"><a href="/Home/Index" class="text-white">Home</a></span> &nbsp; / &nbsp;
+                        <span class="item">My Profile</span>
+                    </div>
+                    <h2 class="text-white display-2">My Profile</h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="jarallax-container-0"
+         style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; z-index: -100; clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);">
+        <img src="~/Content/images/banner.jpg" class="jarallax-img"
+             style="object-fit: cover; object-position: 50% 50%; max-width: none; position: fixed; top: 0px; left: 0px; width: 1305.6px; height: 665.5px; overflow: hidden; pointer-events: none; transform-style: preserve-3d; backface-visibility: hidden; will-change: transform, opacity; margin-top: 72.75px; transform: translate3d(0px, -72.75px, 0px);">
+    </div>
+</section>
+
+
+<section id="latest-blog" class="scrollspy-section padding-large">
+
+    <h1 class="display-4 heading-2 text-center mb3x blog-header" data-testid="gfm-categories-header">
+        My Campaigns
+    </h1>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <!-- post grid -->
+                <div class="post-grid">
+                    <div class="row campaign-filter" data-masonry="{&quot;percentPosition&quot;: true }">
+
+                        <div class="col-md-4">
+
+                            <article class="post-item">
+
+                                <figure>
+                                    <div href="#" class="image-hvr-effect">
+                                        <img src="~/Content/images/Capture.PNG"
+                                             alt="post" class="post-image">
+                                    </div>
+                                </figure>
+
+                                <div class="post-content">
+                                    <div class="post-meta">Costa Mesa, CA</div>
+                                    <h2 class="post-title">
+                                        <a href="/Home/single_post">
+                                            Help Lulu get new teeth and
+                                            stability ❤️
+                                        </a>
+                                    </h2>
+                                    <p>
+                                        Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis
+                                        nulla blandit dui.
+                                    </p>
+                                </div>
+                                <div class="fund-item progress-bar-contain">
+                                    <div class="progress-bar progress-bar-behind">
+                                        <div class="progress-bar progress-bar-fill" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                                <div class="fund-item truncate-single-line">
+                                    <div class="show-for-medium">
+                                        <strong>$50,717 raised</strong> of $20,000
+                                    </div>
+                                </div>
+                                <div class="user-option">
+                                    <a href="#" class="btn">REMOVE</a>
+                                    <a href="#" class="btn">EDIT</a>
+                                </div>
+                            </article>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- / post grid -->
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<script>
+
+    function displayProducts(products) {
+        let displayProducts = products.map(function (item) {
+            return `<div class="col-md-4">
+
+                            <article class="post-item">
+
+                                <figure>
+                                    <div href="#" class="image-hvr-effect">
+                                        <img src="${item.Campaign_Img}" alt="post" class="post-image">
+                                    </div>
+                                </figure>
+
+                                <div class="post-content">
+
+                                <div class="post-meta">Created by ${item.Campaign_FullName} </div>
+                                    <h2 class="post-title">
+                                        <a href="/Home/single_post?p-id=${item.Campaign_ID}">
+                                            ${item.Campaign_Title}
+                                        </a>
+                                    </h2>
+                                    <p>
+                                        ${item.Campaign_Story}
+                                    </p>
+                                </div>
+                                <div class="fund-item progress-bar-contain">
+                                    <div class="progress-bar progress-bar-behind">
+                                        <div class="progress-bar progress-bar-fill" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                                <div class="fund-item truncate-single-line">
+                                    <div class="show-for-medium">
+                                        <strong>$50,717 raised</strong> of $${item.Campaign_Goal}
+                                    </div>
+                                </div>
+                                <div class="user-option">
+                                    <a href="" class="btn">REMOVE</a>
+                                    <a href="/Home/edit?p-id=${item.Campaign_ID}" class="btn">EDIT</a>
+                                </div>
+                            </article>
+
+                        </div>`;
+        });
+        displayProducts = displayProducts.join("");
+
+        document.querySelector(".campaign-filter").innerHTML = displayProducts;
+
+    }
+
+
+    $(document).ready(function () {
+        let currentProducts = []
+
+        const myData = JSON.parse(localStorage.getItem('myData'));
+
+        const ownerId = myData[0].Account_ID
+        const ownerFullname = myData[0].Full_Name
+
+        var formData = new FormData();
+        formData.append("p-owner", ownerId)
+        formData.append("p-fullname", ownerFullname)
+
+        $.ajax(
+            {
+                type: "POST",
+                data: formData,
+                contentType: "application/json; charset=utf-8",
+                url: window.location.origin + '/User/get_CampaignID_Campaign_Owner',
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (response) {
+                    var rs = JSON.parse(response);
+
+                    if (rs.ErrCode == 1) {
+                        console.log(rs.Data)
+                        const products = rs.Data
+                        displayProducts(products)
+                        currentProducts = products
+                    }
+                    else {
+                        alert(rs.ErrDesc);
+                    }
+                },
+                error: function (response) {
+                    alert("Xử lý thêm mới thất bại");
+                }
+            }
+        )
+
+    })
+</script>
+
+

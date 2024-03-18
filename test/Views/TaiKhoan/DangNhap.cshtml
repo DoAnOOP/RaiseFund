@@ -1,0 +1,162 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js"
+            crossorigin="anonymous"></script>
+    <script src="~/Content/assets/js/core/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/Content/assets/css/style.css" />
+    <title>Sign in & Sign up Form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="#" class="sign-in-form" id="sign-in-form">
+                    <h2 class="title">Sign in</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="txt_tk" id="txt_tk" placeholder="Username" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="txt_mk" id="txt_mk" placeholder="Password" />
+                    </div>
+                    <input type="submit" value="Login" id="btn_dangnhap" class="btn solid" />
+                    <p class="social-text">Or Sign in with social platforms</p>
+                    <div class="social-media">
+
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        
+                    </div>
+                </form>
+                <form action="#" class="sign-up-form" id="sign-up-form">
+                    <h2 class="title">Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="txt_tkdk" id="txt_tkdk" placeholder="Username" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="txt_mkdk" id="txt_mkdk" placeholder="Password" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="txt_fullnamedk" id="txt_fullnamedk" placeholder="FullName" />
+                    </div>
+                    <input type="submit" id="btn_dangky" class="btn" value="Sign up" />
+                    <p class="social-text">Or Sign up with social platforms</p>
+                    <div class="social-media">
+
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>New here ?</h3>
+                    <p>You don't have an account before</p>
+                    <button class="btn transparent" id="sign-up-btn">
+                        Sign up
+                    </button>
+                </div>
+                
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>One of us ?</h3>
+                    <button class="btn transparent" id="sign-in-btn">
+                        Sign in
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/js/app.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn_dangnhap").click(function (e) {
+                e.preventDefault()
+                var form = $('#sign-in-form')[0];
+                var formData = new FormData(form);
+                $.ajax(
+                    {
+                        type: "POST",
+                        data: formData,
+                        contentType: "application/json; charset=utf-8",
+                        url: window.location.origin + '/TaiKhoan/DangNhap_action',
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        success: function (response) {
+                            var rs = JSON.parse(response);
+                            console.log(rs.Data);
+                            localStorage.setItem('myData', JSON.stringify(rs.Data));
+                            if (rs.ErrCode == 1) {
+                                /*const accountin4 = rs.Data;*/
+                                console.log(rs.Data)
+                                // Lưu dữ liệu vào localStorage
+                                
+                                window.location.href = "/Home/create";                            
+                            }
+                            else {
+                                alert(rs.ErrDesc);
+                            }
+
+                        },
+                        error: function (response) {
+                            alert("Xử lý thêm mới thất bại");
+                        }
+                    }
+                )
+            })
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btn_dangky").click(function (e) {
+                e.preventDefault()
+                var form = $('#sign-up-form')[0];
+                var formData = new FormData(form);
+                $.ajax(
+                    {
+                        type: "POST",
+                        data: formData,
+                        contentType: "application/json; charset=utf-8",
+                        url: window.location.origin + '/TaiKhoan/DangKy_action',
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        success: function (response) {
+                            alert(response);
+
+
+                        },
+                        error: function (response) {
+                            alert("Xử lý thêm mới thất bại");
+                        }
+                    }
+                )
+            })
+        })
+    </script>
+</body>
+</html>
+
